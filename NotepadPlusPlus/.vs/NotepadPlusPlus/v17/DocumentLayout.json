@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Facultate\\ANUL2\\SEMESTRUL2\\MVC\\NotepadPlusPlus\\NotepadPlusPlus\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7BAFADB7-D647-436F-9091-7BB2989F8A4E}|NotepadPlusPlus.csproj|c:\\facultate\\anul2\\semestrul2\\mvc\\notepadplusplus\\notepadplusplus\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7BAFADB7-D647-436F-9091-7BB2989F8A4E}|NotepadPlusPlus.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7BAFADB7-D647-436F-9091-7BB2989F8A4E}|NotepadPlusPlus.csproj|c:\\facultate\\anul2\\semestrul2\\mvc\\notepadplusplus\\notepadplusplus\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7BAFADB7-D647-436F-9091-7BB2989F8A4E}|NotepadPlusPlus.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7BAFADB7-D647-436F-9091-7BB2989F8A4E}|NotepadPlusPlus.csproj|c:\\facultate\\anul2\\semestrul2\\mvc\\notepadplusplus\\notepadplusplus\\models\\page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BAFADB7-D647-436F-9091-7BB2989F8A4E}|NotepadPlusPlus.csproj|solutionrelative:models\\page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,7 +46,32 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Page.cs",
+              "DocumentMoniker": "C:\\Facultate\\ANUL2\\SEMESTRUL2\\MVC\\NotepadPlusPlus\\NotepadPlusPlus\\Models\\Page.cs",
+              "RelativeDocumentMoniker": "Models\\Page.cs",
+              "ToolTip": "C:\\Facultate\\ANUL2\\SEMESTRUL2\\MVC\\NotepadPlusPlus\\NotepadPlusPlus\\Models\\Page.cs",
+              "RelativeToolTip": "Models\\Page.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T12:17:21.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Facultate\\ANUL2\\SEMESTRUL2\\MVC\\NotepadPlusPlus\\NotepadPlusPlus\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Facultate\\ANUL2\\SEMESTRUL2\\MVC\\NotepadPlusPlus\\NotepadPlusPlus\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-03T12:10:01.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Facultate\\ANUL2\\SEMESTRUL2\\MVC\\NotepadPlusPlus\\NotepadPlusPlus\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
