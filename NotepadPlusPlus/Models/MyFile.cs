@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace NotepadPlusPlus.Models
 {
-    internal class Page
+    internal class MyFile
     {
         public string Title { get; set; }
         public string Content { get; set; }
         public DateTime LastModified { get; set; }
 
-        public Page()
+        public MyFile()
         {
             Title = "Untitled";
             Content = string.Empty;
             LastModified = DateTime.Now;
         }
 
-        public Page(string title, string content)
+        public MyFile(string title, string content)
         {
             Title = title;
             Content = content;

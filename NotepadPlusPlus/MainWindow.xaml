@@ -8,7 +8,7 @@
         <DockPanel>
             <Menu DockPanel.Dock="Top" Background="#F0F0F0" Padding="2">
                 <MenuItem Header="File">
-                    <MenuItem Header="New" InputGestureText="Ctrl+N" />
+                    <MenuItem Header="New" Click="NewFileButton_Click" InputGestureText="Ctrl+N" />
                     <MenuItem Header="Open..." InputGestureText="Ctrl+O" />
                     <MenuItem Header="Save" InputGestureText="Ctrl+S" />
                     <Separator />
@@ -59,20 +59,85 @@
 
             <ToolBarTray DockPanel.Dock="Top">
                 <ToolBar Band="1" Background="#FFDDDDDD">
-                    <Button Content="New" Padding="5,0" />
-                    <Button Content="Open" Padding="5,0" />
-                    <Button Content="Save" Padding="5,0" />
+                    <Button Padding="5,0" Click="NewFileButton_Click" ToolTip="New">
+                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE8A5;" />
+                    </Button>
+                    <Button Padding="5,0" ToolTip="Open">
+                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE8E5;" />
+                    </Button>
+                    <Button Padding="5,0" ToolTip="Open Folder">
+                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE838;" />
+                    </Button>
+                    <Button Padding="5,0" ToolTip="Save">
+                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE74E;" />
+                    </Button>
+                    <Button Padding="5,0" ToolTip="Save As">
+                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE792;" />
+                    </Button>
                     <Separator />
-                    <Button Content="Cut" />
-                    <Button Content="Copy" />
-                    <Button Content="Paste" />
+                    <Button Padding="5,0" ToolTip="Cut">
+                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE8C6;" />
+                    </Button>
+                    <Button Padding="5,0" ToolTip="Copy">
+                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE8C8;" />
+                    </Button>
+                    <Button Padding="5,0" ToolTip="Paste">
+                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE77F;" />
+                    </Button>
                 </ToolBar>
             </ToolBarTray>
 
-            <TextBox AcceptsReturn="True" AcceptsTab="True" 
-                     VerticalScrollBarVisibility="Auto" 
-                     HorizontalScrollBarVisibility="Auto" 
-                     FontFamily="Consolas" FontSize="14" />
+            <StatusBar DockPanel.Dock="Bottom" Background="#F0F0F0">
+                <StatusBarItem>
+                    <TextBlock Text="Normal text file" />
+                </StatusBarItem>
+                <Separator />
+                <StatusBarItem>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="length : " />
+                        <TextBlock Text="0" FontWeight="Bold" />
+                        <TextBlock Text="  lines : " Margin="10,0,0,0" />
+                        <TextBlock Text="1" FontWeight="Bold" />
+                    </StackPanel>
+                </StatusBarItem>
+                <StatusBarItem HorizontalAlignment="Right">
+                    <TextBlock Text="Ln : 1  Col : 1 | Pos : 1" Margin="0,0,20,0" />
+                </StatusBarItem>
+                <StatusBarItem HorizontalAlignment="Right">
+                    <TextBlock Text="Windows (CR LF)" Margin="0,0,10,0" />
+                </StatusBarItem>
+                <StatusBarItem HorizontalAlignment="Right">
+                    <TextBlock Text="UTF-8" Margin="0,0,10,0" />
+                </StatusBarItem>
+            </StatusBar>
+
+            <TabControl x:Name="EditorsTabControl">
+                <TabControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Title}" VerticalAlignment="Center" />
+                            <Button Content="×" Command="{Binding CloseCommand}" 
+                        Margin="5,0,0,0" Padding="2,0" Background="Transparent" BorderThickness="0" />
+                        </StackPanel>
+                    </DataTemplate>
+                </TabControl.ItemTemplate>
+
+                <TabControl.ContentTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" Background="#F0F0F0" Width="40">
+                                <TextBlock Text="1" Foreground="#999999" HorizontalAlignment="Center" FontFamily="Consolas" />
+                            </StackPanel>
+                            <TextBox Grid.Column="1" Text="{Binding Content, UpdateSourceTrigger=PropertyChanged}" 
+                         AcceptsReturn="True" AcceptsTab="True" FontFamily="Consolas" BorderThickness="0"/>
+                        </Grid>
+                    </DataTemplate>
+                </TabControl.ContentTemplate>
+            </TabControl>
         </DockPanel>
     </Grid>
 </Window>

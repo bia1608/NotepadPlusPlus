@@ -11,8 +11,8 @@
       "RelativeMoniker": "D:0:0:{7BAFADB7-D647-436F-9091-7BB2989F8A4E}|NotepadPlusPlus.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7BAFADB7-D647-436F-9091-7BB2989F8A4E}|NotepadPlusPlus.csproj|c:\\facultate\\anul2\\semestrul2\\mvc\\notepadplusplus\\notepadplusplus\\models\\page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7BAFADB7-D647-436F-9091-7BB2989F8A4E}|NotepadPlusPlus.csproj|solutionrelative:models\\page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7BAFADB7-D647-436F-9091-7BB2989F8A4E}|NotepadPlusPlus.csproj|c:\\facultate\\anul2\\semestrul2\\mvc\\notepadplusplus\\notepadplusplus\\models\\myfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7BAFADB7-D647-436F-9091-7BB2989F8A4E}|NotepadPlusPlus.csproj|solutionrelative:models\\myfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,15 +47,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Page.cs",
-              "DocumentMoniker": "C:\\Facultate\\ANUL2\\SEMESTRUL2\\MVC\\NotepadPlusPlus\\NotepadPlusPlus\\Models\\Page.cs",
-              "RelativeDocumentMoniker": "Models\\Page.cs",
-              "ToolTip": "C:\\Facultate\\ANUL2\\SEMESTRUL2\\MVC\\NotepadPlusPlus\\NotepadPlusPlus\\Models\\Page.cs",
-              "RelativeToolTip": "Models\\Page.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAVAAAAAAAAAA==",
+              "Title": "MyFile.cs",
+              "DocumentMoniker": "C:\\Facultate\\ANUL2\\SEMESTRUL2\\MVC\\NotepadPlusPlus\\NotepadPlusPlus\\Models\\MyFile.cs",
+              "RelativeDocumentMoniker": "Models\\MyFile.cs",
+              "ToolTip": "C:\\Facultate\\ANUL2\\SEMESTRUL2\\MVC\\NotepadPlusPlus\\NotepadPlusPlus\\Models\\MyFile.cs",
+              "RelativeToolTip": "Models\\MyFile.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T12:17:21.861Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-03T12:17:21.861Z"
             },
             {
               "$type": "Document",
@@ -77,7 +76,7 @@
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Facultate\\ANUL2\\SEMESTRUL2\\MVC\\NotepadPlusPlus\\NotepadPlusPlus\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAxwBcAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-03T12:09:58.873Z",
               "EditorCaption": ""
