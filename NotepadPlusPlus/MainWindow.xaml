@@ -4,14 +4,36 @@
         Title="Notepad++" Height="450" Width="800"
         WindowStartupLocation="CenterScreen" WindowState="Maximized">
 
+    <Window.Resources>
+        <Style x:Key="UnsavedTabItemStyle" TargetType="TabItem">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsSaved}" Value="False">
+                    <Setter Property="Background" Value="#FFE6B3" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        
+        <Style x:Key="TabTitleTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsSaved}" Value="False">
+                    <Setter Property="Foreground" Value="Red" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <DockPanel>
             <Menu DockPanel.Dock="Top" Background="#F0F0F0" Padding="2">
                 <MenuItem Header="File">
                     <MenuItem Header="New" Click="NewFileButton_Click" InputGestureText="Ctrl+N" />
-                    <MenuItem Header="Open..." InputGestureText="Ctrl+O" />
-                    <MenuItem Header="Save" InputGestureText="Ctrl+S" />
+                    <MenuItem Header="Open..." Click="OpenFileButton_Click" InputGestureText="Ctrl+O" />
+                    <MenuItem Header="Save" Click="SaveFileButton_Click" InputGestureText="Ctrl+S" />
+                    <MenuItem Header="Save As" Click="SaveAsFileButton_Click" InputGestureText="Ctrl+S" />
                     <Separator />
+                    <MenuItem Header="Close all files" />
                     <MenuItem Header="Exit" />
                 </MenuItem>
 
@@ -19,42 +41,29 @@
                     <MenuItem Header="Undo" InputGestureText="Ctrl+Z" />
                     <MenuItem Header="Redo" InputGestureText="Ctrl+Y" />
                     <Separator />
-                    <MenuItem Header="Cut" InputGestureText="Ctrl+X" />
-                    <MenuItem Header="Copy" InputGestureText="Ctrl+C" />
-                    <MenuItem Header="Paste" InputGestureText="Ctrl+V" />
+                    <MenuItem Header="Cut" Click="CutButton_Click" InputGestureText="Ctrl+X" />
+                    <MenuItem Header="Copy" Click="CopyButton_Click" InputGestureText="Ctrl+C" />
+                    <MenuItem Header="Paste" Click="PasteButton_Click" InputGestureText="Ctrl+V" />
                 </MenuItem>
 
                 <MenuItem Header="Search">
                     <MenuItem Header="Find..." InputGestureText="Ctrl+F" />
                     <MenuItem Header="Replace..." InputGestureText="Ctrl+H" />
+                    <MenuItem Header="Replace All..." InputGestureText="" />
+                    <MenuItem Header="All Tabs" InputGestureText="" />
+                    <MenuItem Header="Selected Tabs" InputGestureText="" />
+
                 </MenuItem>
 
                 <MenuItem Header="View">
-                    <MenuItem Header="Always on Top" IsCheckable="True" />
-                    <MenuItem Header="Full Screen Mode" />
+                    
+                    <MenuItem Header="Standard" IsCheckable="True" />
+                    <MenuItem Header="Folder Explorer" />
                 </MenuItem>
 
-                <MenuItem Header="Encoding">
-                    <MenuItem Header="ANSI" />
-                    <MenuItem Header="UTF-8" IsChecked="True" />
-                    <MenuItem Header="UTF-8 with BOM" />
+                <MenuItem Header="Help">
+                    <MenuItem Header="About" />
                 </MenuItem>
-
-                <MenuItem Header="Language">
-                    <MenuItem Header="C" />
-                    <MenuItem Header="C++" />
-                    <MenuItem Header="C#" />
-                    <MenuItem Header="Java" />
-                    <MenuItem Header="Python" />
-                </MenuItem>
-
-                <MenuItem Header="Settings">
-                    <MenuItem Header="Preferences..." />
-                    <MenuItem Header="Style Configurator..." />
-                </MenuItem>
-
-                <MenuItem Header="Tools" />
-                <MenuItem Header="Macro" />
             </Menu>
 
             <ToolBarTray DockPanel.Dock="Top">
@@ -62,26 +71,32 @@
                     <Button Padding="5,0" Click="NewFileButton_Click" ToolTip="New">
                         <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE8A5;" />
                     </Button>
-                    <Button Padding="5,0" ToolTip="Open">
+                    <Button Padding="5,0" Click="OpenFileButton_Click" ToolTip="Open">
                         <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE8E5;" />
                     </Button>
                     <Button Padding="5,0" ToolTip="Open Folder">
                         <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE838;" />
                     </Button>
-                    <Button Padding="5,0" ToolTip="Save">
+                    <Button Padding="5,0" Click="SaveFileButton_Click" ToolTip="Save">
                         <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE74E;" />
                     </Button>
-                    <Button Padding="5,0" ToolTip="Save As">
+                    <Button Padding="5,0" Click="SaveAsFileButton_Click" ToolTip="Save As">
                         <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE792;" />
                     </Button>
                     <Separator />
-                    <Button Padding="5,0" ToolTip="Cut">
+                    <Button Padding="5,0" Click="UndoButton_Click" ToolTip="Undo">
+                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE7A7;" />
+                    </Button>
+                    <Button Padding="5,0" Click="RedoButton_Click" ToolTip="Redo">
+                        <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE7A6;" />
+                    </Button>
+                    <Button Padding="5,0" Click="CutButton_Click" ToolTip="Cut">
                         <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE8C6;" />
                     </Button>
-                    <Button Padding="5,0" ToolTip="Copy">
+                    <Button Padding="5,0" Click="CopyButton_Click" ToolTip="Copy">
                         <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE8C8;" />
                     </Button>
-                    <Button Padding="5,0" ToolTip="Paste">
+                    <Button Padding="5,0" Click="PasteButton_Click" ToolTip="Paste">
                         <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="16" Text="&#xE77F;" />
                     </Button>
                 </ToolBar>
@@ -111,11 +126,11 @@
                 </StatusBarItem>
             </StatusBar>
 
-            <TabControl x:Name="EditorsTabControl">
+            <TabControl x:Name="EditorsTabControl" ItemContainerStyle="{StaticResource UnsavedTabItemStyle}">
                 <TabControl.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Title}" VerticalAlignment="Center" />
+                            <TextBlock Text="{Binding Title}" VerticalAlignment="Center" Style="{StaticResource TabTitleTextStyle}" />
                             <Button Content="×" Command="{Binding CloseCommand}" 
                         Margin="5,0,0,0" Padding="2,0" Background="Transparent" BorderThickness="0" />
                         </StackPanel>
