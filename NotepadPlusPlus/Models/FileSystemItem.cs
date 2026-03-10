@@ -39,32 +39,37 @@ namespace NotepadPlusPlus.Models
         {
             if (!IsDirectory)
                 return;
+
             if (Children.Count == 1 && Children[0] == null)
+            {
                 Children.Clear();
-            try
-            {
-                foreach (var dir in Directory.GetDirectories(FullPath))
+
+                try
                 {
-                    var dirItem = new FileSystemItem(dir);
-                    Children.Add(dirItem);
+                    foreach (var dir in Directory.GetDirectories(FullPath))
+                    {
+                        var dirItem = new FileSystemItem(dir);
+                        Children.Add(dirItem);
+                    }
+
+                    foreach (var file in Directory.GetFiles(FullPath))
+                    {
+                        var fileItem = new FileSystemItem(file);
+                        Children.Add(fileItem);
+                    }
                 }
-                foreach (var file in Directory.GetFiles(FullPath))
+                catch (UnauthorizedAccessException)
                 {
-                    var fileItem = new FileSystemItem(file);
-                    Children.Add(fileItem);
+                    Children.Add(new FileSystemItem("[Access Denied]")
+                    {
+                        IsDirectory = false
+                    });
                 }
-            }
-            catch
-            {
-                Children.Add(new FileSystemItem("[Access Denied]")
-                {
-                    IsDirectory = false
-                });
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void NotifyPropertyChanged([CallerMemberName] string name = null)
+        public event PropertyChangedEventHandler? PropertyChanged;
+        protected void NotifyPropertyChanged([CallerMemberName] string? name = null)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
 }

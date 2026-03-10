@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NotepadPlusPlus.Models
 {
-    internal class MyFile : INotifyPropertyChanged
+    public class MyFile : INotifyPropertyChanged
     {
         private string _title;
         private string _content;

@@ -295,22 +295,11 @@ namespace NotepadPlusPlus
                 CopyDirectoryContents(d, Path.Combine(dest, Path.GetFileName(d)));
         }
 
-        private void FindButton_Click(object sender, RoutedEventArgs e)
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
+            var win = new SearchWindow(files);
+            win.Show();
 
-        }
-
-        private void ReplaceButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ReplaceAllButton_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void FindInFilesButton_Click(object sender, RoutedEventArgs e)
-        {
         }
     }
 }

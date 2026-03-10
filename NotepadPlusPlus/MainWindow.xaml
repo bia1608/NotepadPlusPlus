@@ -64,16 +64,9 @@
                     <MenuItem Header="Paste" Click="PasteButton_Click" InputGestureText="Ctrl+V" />
                 </MenuItem>
 
-                <MenuItem Header="Search">
-                    <MenuItem Header="Find..." Click="FindButton_Click" InputGestureText="Ctrl+F" />
-                    <MenuItem Header="Replace..." Click="ReplaceButton_Click" InputGestureText="Ctrl+H" />
-                    <MenuItem Header="Replace All..." Click="ReplaceAllButton_Click" InputGestureText="" />
-                    <MenuItem Header="All Tabs" InputGestureText="" />
-                    <MenuItem Header="Selected Tabs" InputGestureText="" />
+            <MenuItem Header="Search" Click="SearchButton_Click"/>
 
-                </MenuItem>
-
-                <MenuItem Header="View">
+            <MenuItem Header="View">
                     <MenuItem Header="Toggle Folder Explorer" Click="ToggleFolderExplorer_Click" IsCheckable="True" x:Name="FolderExplorerMenuItem" />
                 </MenuItem>
 
